@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: #aaa;
+        font-size: 30px;
+        margin: 20px;
+      }
+      .all {
+        background: #af0;
+        border-radius: 7px;
+      }
+      .head {
+        text-transform: capitalize;
+      }
+      p {
+        text-align: center;
+      }
+      #btnRate {
+        padding: 20px;
+        font-size: 20px;
+        margin-left: 50%;
+        background: #f00;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="all">
+      <p class="head">Please rate about service</p>
+      <p><input type="radio" name="rate" value="Very poor" /> Very Poor</p>
+      <p><input type="radio" name="rate" value="poor" /> poor</p>
+      <p><input type="radio" name="rate" value="Average" /> Average</p>
+      <p><input type="radio" name="rate" value="Good" /> Good</p>
+      <p><input type="radio" name="rate" value="Very good" /> Very Good</p>
+      <button id="btnRate">submit</button>
+    </div>
+    <script>
+      let button = document.querySelector("#btnRate");
+      button.addEventListener("click", () => {
+        let rates = document.getElementsByName("rate");
+        rates.forEach((rate) => {
+          if (rate.checked) {
+            alert(`You rated ${rate.value}`);
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
